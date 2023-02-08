@@ -82,6 +82,13 @@ header .navbar a:hover
     border: 2px solid hsl(26, 100%, 55%);
 }
 
+#menu {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none;
+}
+
 /* Headers ends */
 
 /* Cart Starts*/
@@ -193,6 +200,15 @@ header .navbar a:hover
     cursor: pointer;
 }
 
+.add-cart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 27px;
+}
+
 
 /* Cart ends*/
 
@@ -254,3 +270,108 @@ header .navbar a:hover
 }
 
 /* Shop content ends */
+
+/* Media Query */
+
+@media (max-width: 1080px) {
+    .nav {
+        padding: 15px;
+    }
+    section {
+        padding: 3rem 0 2rem;
+    }
+    .container {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .shop {
+        margin-top: 3rem !important;
+    }
+}
+
+@media (max-width: 991px)
+{
+    html 
+    {
+        font-size: 75%;
+    }
+    .nav 
+    {
+        padding: 1rem 2rem;
+    }
+    .logo
+    {
+        height: 4.7rem;
+    }
+    .shop {
+        margin-top: 5rem !important;
+    }
+}
+
+@media (max-width: 815px) {
+    html 
+    {
+        font-size: 75%;
+    }
+    .logo
+    {
+        height: 4.7rem;
+    }
+    .shop {
+        margin-top: 5rem !important;
+    }
+    header #menu
+    {
+        display: inline-block;
+    }
+    header .navbar
+    {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(205,170,124,0.2);
+        border-bottom: .1rem solid rgba(205,170,124,0.2);
+        padding: 1rem;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    }
+    header .navbar.active
+    {
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    }
+    header .navbar a
+    {
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 1.5rem;
+        background: var(--bg-color);
+    }
+}
+
+@media (max-width: 360px) {
+    .cart {
+        width: 280px;
+    }
+    .logo {
+        height: 3.6rem;
+    }
+    header .navbar a
+    {
+        display: block;
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 1rem;
+        background: var(--bg-color);
+    }
+}
+
+@media (max-width: 280px) {
+    .cart {
+        width: 10px;
+    }
+    .logo {
+        height: .5rem;
+    }
+}
