@@ -715,4 +715,26 @@ header .navbar a:hover
     .product-box:hover {
         padding: 0px;
     }
+
+    .shop-content {
+        grid: none;
+    }
+
+    .spit {
+        background-color: var(--bg-color);
+        border: none;
+    }
+
+    /* clipping text */
+    .truncate {
+
+        line-height: 1rem;
+        max-height: 5rem;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 4;
+
+    }
   }
