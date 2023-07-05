@@ -4,7 +4,7 @@
 This is a wonderful display of `HTML`, `JS` and `CSS` :sparkles: manipulation at work <br>
 *which i'm so excited :blush:* to share with you today.
 
-## :tulip: Welcome to my Responsuve Shopping Site :tulip:
+## :tulip: Welcome to my Responsive Shopping Site :tulip:
 
 This is a web-based Shopping website that will show-case a few items/product for an imaginary company.
 This will display customer/user avatar, numerous animations with the products on display and the height of knowledge gained with **`The Learning People`**<br>
