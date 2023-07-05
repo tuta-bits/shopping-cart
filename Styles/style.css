@@ -706,3 +706,13 @@ header .navbar a:hover
     padding: 5px;
     transform: 0.4s;
   }
+
+  @media screen and (min-width: 300px) and (max-width: 499px) {
+    .here {
+        pointer-events: none;
+    }
+
+    .product-box:hover {
+        padding: 0px;
+    }
+  }
