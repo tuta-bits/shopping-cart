@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Website</title>
     <!--Link to custom CSS-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Styles/style.css">
     <!--Font awesome link-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!--Box icons CSS link-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 <body>
     <!--Header section starts here-->
@@ -19,30 +20,32 @@
         <!--Nav-->
         <div class="nav container">
             <div class="drill"><i class='bx bx-menu' id="menu"></i></div>
-            <a href="#"><img src="images/logo.svg"></a>
+            <a href="#"><img src="images/logo.svg" alt="logo image"></a>
             <nav class="navbar">
-                <a href="#home" class="active">Collections</a>
-                <a href="#men">Men</a>
-                <a href="#menu">Women</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" class="active grp">Collections</a>
+                <a href="#men" class="grp">Men</a>
+                <a href="#women" class="grp">Women</a>
+                <a href="#about" class="grp">About</a>
+                <a href="#contact" class="grp">Contact</a>
+                <div class="indi"></div>
             </nav>
-            <i id="cart-icon"><img src="images/icon-cart.svg"></i>
-            <a href="#" class="logo"><img src="images/image-avatar.png"></a>
+            <div id="cart-icon" class="slam"><div class="box" id="count">0</div><img src="images/icon-cart.svg" alt="cart image"></div>
+            <a href="#" class="logo"><img src="images/image-avatar.png" alt="avatar image" id="counter"></a>
             <!-- Cart -->
             <div class="cart">
-                <h2 class="cart-title">Cart</h2>
+                <div class="cart-title">Cart</div>
                 <!-- Content -->
                 <div class="cart-content">
                     <!--<div class="cart-box">
                         <img src="images/image-product-1-thumbnail.jpg" alt="Sneakers" class="cart-img">
                         <div class="detail-box">
                             <div class="cart-product-title">Fall Limited Edition Sneakers</div>
-                            <div class="cart-price">$125.45</div>
+                            <div class="cart-price">$125.00</div>
+                            <div class="cart-amt">$125.00</div>
                             <input type="number" value="1" class="cart-quantity">
                         </div>
                         // Remove Cart 
-                        <i class="bx bx-trash cart-remove"></i>
+                        <i class="bx bx-trash cart-remove">
                     </div> -->
                 </div>
                 <!-- Total -->  
@@ -51,7 +54,7 @@
                     <div class="total-price">$0</div>
                 </div>
                 <!-- Buy Button --> 
-                <button type="button" class="btn-buy">Checkout</button>
+                <button type="button" class="btn-buy" id="mini">Checkout</button>
                 <!-- Cart Close -->
                 <i class="bx bx-x" id="close-cart"></i>
             </div>
@@ -64,6 +67,37 @@
 
     <section class="shop container">
         <h2 class="section-title">Shop Product</h2>
+        <div class="wrap">
+            <div class="cont">
+                <img src="images/image-product-1.jpg" alt="sneakers" id="mainImg" class="here"  onclick="openModal();currentSlide(1)">
+            </div>
+            <div class="jagan">
+                <h6>sneakers company</h6>
+                <h2 class="got">Fall limited edition sneakers</h2>
+                <span>
+                    These low-profile sneakers are your perfect casual wear 
+                    companion. Featuring a durable rubber outer sole, they'll 
+                    withstand everything the weather can offer.
+                </span>
+                <div class="grad">
+                    <span class="rap">$125.00</span>
+                    <span class="spit">50%</span>
+                </div>
+                
+                <h4>$250.00</h4>
+                <div class="trap">
+                    <div class="grant">
+                        <span class="minus"><img src="images/icon-minus.svg" alt="minus icon"></span>
+                        <span class="num" value="0">1</span>
+                        <span class="plus"><img src="images/icon-plus.svg" alt="plus icon"></span>
+                    </div>
+                    <div class="grant-it">
+                        <button id="btn" onclick="addItem()" class="add"><img src="images/icon-cart.svg" alt="cart icon">Add to cart</button>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
         <!--Content-->
         <div class="shop-content">
             <!--Box 1-->
@@ -76,25 +110,57 @@
             <!--Box 2-->
             <div class="product-box">
                 <img src="images/image-product-2.jpg" alt="Sneakers" class="product-img">
-                <h2 class="product-title">Fall Limited Sneakers</h2>
+                <h2 class="product-title">autum limited edition sneakers</h2>
                 <span class="price">$125.00</span>
                 <i class='bx bx-cart-alt add-cart'></i>
             </div>
             <!--Box 3-->
             <div class="product-box">
                 <img src="images/image-product-3.jpg" alt="Sneakers" class="product-img">
-                <h2 class="product-title">Spring Limited Edition Sneakers</h2>
+                <h2 class="product-title">Spring limited edition sneakers</h2>
                 <span class="price">$125.00</span>
                 <i class='bx bx-cart-alt add-cart'></i>
             </div>
             <!--Box 4-->
             <div class="product-box">
                 <img src="images/image-product-4.jpg" alt="Sneakers" class="product-img">
-                <h2 class="product-title">Spring Sneakers</h2>
+                <h2 class="product-title">winter limited edition sneakers</h2>
                 <span class="price">$125.00</span>
                 <i class='bx bx-cart-alt add-cart'></i>
             </div>
         </div>
+
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+          
+              <div class="mySlides">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers" class="kinda">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">2 / 4</div>
+                <img src="images/image-product-2.jpg" alt="Autum Limited Edition Sneakers" class="kinda">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">3 / 4</div>
+                <img src="images/image-product-3.jpg" alt="Spring Limited Edition Sneakers" class="kinda">
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">4 / 4</div>
+                <img src="images/image-product-4.jpg" alt="Winter Limited Edition Sneakers" class="kinda">
+              </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
     </section>
 
     <!--Shopping section ends here-->
@@ -106,11 +172,99 @@
     <script type="text/javascript">
         let menu = document.querySelector('#menu');
         let navbar = document.querySelector('.navbar');
+        let bat = document.querySelector('#mini');
+        let batty = document.querySelector('#count');
+        let mainImg = document.getElementById('mainImg');
+        let smallImg = document.getElementsByClassName('product-img');
 
+        //toggling menu icon @media screen
         menu.onclick = () => {
             menu.classList.toggle('bx-x');
             navbar.classList.toggle('active');
         }
+
+        // clearing counter after clicking checkout btn
+        bat.onclick = () => {
+            batty.remove();
+            window.location.reload();
+        }
+
+        // Swapping sneakers images
+        smallImg[0].onclick = function() {
+            mainImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function() {
+            mainImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function() {
+            mainImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function() {
+            mainImg.src = smallImg[3].src;
+        }
+
+        // Swapping image titles
+       let myTitle = document.querySelectorAll('.product-title');
+       let myHeading = document.querySelector('.got');
+
+       myTitle[0].onclick = function () {
+        myHeading.innerText = myTitle[0].innerHTML;
+        console.log(myTitle[0])
+       }
+       myTitle[1].onclick = function () {
+        myHeading.innerText = myTitle[1].innerHTML;
+        console.log(myTitle[1])
+       }
+       myTitle[2].onclick = function () {
+        myHeading.innerText = myTitle[2].innerHTML;
+        console.log(myTitle[2])
+       }
+       myTitle[3].onclick = function () {
+        myHeading.innerText = myTitle[3].innerHTML;
+        console.log(myTitle[3])
+       }
+
+
+
+     
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var captionText = document.getElementById("caption");
+  let prodName = document.getElementsByClassName('kinda');
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < prodName.length; i++) {
+    prodName[i].className = prodName[i].className.replace(' active', '');
+  }
+  slides[slideIndex-1].style.display = "block";
+  prodName[slideIndex-1].className += ' active';
+  captionText.innerHTML = prodName[slideIndex-1].alt;
+}
+
     </script>
 
 </body>
