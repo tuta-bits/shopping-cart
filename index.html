@@ -69,7 +69,7 @@
         <h2 class="section-title">Shop Product</h2>
         <div class="wrap">
             <div class="cont">
-                <img src="images/image-product-1.jpg" alt="sneakers" id="mainImg" class="here"  onclick="openModal();currentSlide(1)">
+                <img src="images/image-product-1.jpg" alt="sneakers" id="mainImg" class="here"  onclick="openLightbox();currentSlide(1)">
             </div>
             <div class="jagan">
                 <h6>sneakers company</h6>
@@ -132,27 +132,27 @@
 
 
         <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <span class="close cursor" onclick="closeLightbox()">&times;</span>
             <div class="modal-content">
           
               <div class="mySlides">
                 <div class="numbertext">1 / 4</div>
-                <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers" class="kinda">
+                <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
               </div>
           
               <div class="mySlides">
                 <div class="numbertext">2 / 4</div>
-                <img src="images/image-product-2.jpg" alt="Autum Limited Edition Sneakers" class="kinda">
+                <img src="images/image-product-2.jpg" alt="Autum Limited Edition Sneakers">
               </div>
           
               <div class="mySlides">
                 <div class="numbertext">3 / 4</div>
-                <img src="images/image-product-3.jpg" alt="Spring Limited Edition Sneakers" class="kinda">
+                <img src="images/image-product-3.jpg" alt="Spring Limited Edition Sneakers">
               </div>
               
               <div class="mySlides">
                 <div class="numbertext">4 / 4</div>
-                <img src="images/image-product-4.jpg" alt="Winter Limited Edition Sneakers" class="kinda">
+                <img src="images/image-product-4.jpg" alt="Winter Limited Edition Sneakers">
               </div>
               
               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -161,6 +161,23 @@
               <div class="caption-container">
                 <p id="caption"></p>
               </div>
+              <div class="holder">
+                <div class="pic-box">
+                    <img class="kinda cursor" src="images/image-product-1-thumbnail.jpg" onclick="currentSlide(1)" alt="Fall Limited Edition Sneakers">
+                </div>
+                <div class="pic-box">
+                    <img class="kinda cursor" src="images/image-product-2-thumbnail.jpg" onclick="currentSlide(2)" alt="Autum Limited Edition Sneakers">
+                </div>
+                <div class="pic-box">
+                    <img class="kinda cursor" src="images/image-product-3-thumbnail.jpg" onclick="currentSlide(3)" alt="Spring Limited Edition Sneakers">
+                </div>
+                <div class="pic-box">
+                    <img class="kinda cursor" src="images/image-product-4-thumbnail.jpg" onclick="currentSlide(4)" alt="Winter Limited Edition Sneakers">
+                </div>
+              </div>
+
+            </div>
+        </div>
     </section>
 
     <!--Shopping section ends here-->
@@ -227,11 +244,11 @@
 
 
      
-function openModal() {
+function openLightbox() {
   document.getElementById("myModal").style.display = "block";
 }
 
-function closeModal() {
+function closeLightbox() {
   document.getElementById("myModal").style.display = "none";
 }
 
